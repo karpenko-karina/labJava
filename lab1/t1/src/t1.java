@@ -43,14 +43,14 @@ public class t1 {
         for (int i = 0; i < marr.length; i++) {
             System.out.print(marr[i] + "\t");
         }
-        System.out.println();
+        System.out.println("\n");
     }
     //print char array
     public void printcArr() {
         for (int i = 0; i < carr.length; i++) {
             System.out.print(carr[i] + "\t");
         }
-        System.out.println();
+        System.out.println("\n");
     }
     //fill 2d array
     public void filldArr() {

@@ -1,6 +1,8 @@
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.Random;
+
 /* class created for solving task2
  */
 public class t2 {
@@ -24,23 +26,16 @@ public class t2 {
         carr = new String[m];
         strbuilder = new StringBuilder();
     }
-    // print 2d array
-    public void printdArr() {
-        for (int i = 0; i < darr.length; i++) {
-            for (int j = 0; j < darr[i].length; j++) {
-                System.out.print(darr[i][j] + "\t");
-            }
-            System.out.println();
-        }
-        System.out.println();
-    }
-    //print char array
-    public void printcArr() {
-        for (int i = 0; i < carr.length; i++) {
-            System.out.print(carr[i] + "\t");
-        }
-        System.out.println();
-    }
+    /* generate rand numer
+    @param min - minimal number in range
+    @param max - maximum number in range
+    @return pseudo random number in range [min, nax]
+
+     */
+//    public int randomNum(int min, int max) {
+//        return (int) ((Math.random() * (max - min)) + min);
+//    }
+
     //fill 2d array
     public void filldArr() {
         int num;
@@ -56,6 +51,7 @@ public class t2 {
     }
     //search for min number in 2d arr,
     // calls fillcArr() function and send index and min number
+
     public void findMin() {
         min = 3;
         for (int i = 0; i < m; i++) {
@@ -81,16 +77,21 @@ public class t2 {
     //sort str array
     public void sortStrArr() {
         Arrays.sort(carr, Comparator.reverseOrder());
-        for (String ch : carr) {
-            System.out.print(ch + "\t");
-        }
+//        for (String ch : carr) {
+//            System.out.print(ch + "\t");
+//        }
+    }
+    //print arr
+    public <T> void printanyArr(T[] a){
+        System.out.println(Arrays.deepToString(a) + "\n");
     }
     //to make
     public void make() {
         t2.this.filldArr();
-        t2.this.printdArr();
+        t2.this.printanyArr(darr);
         t2.this.findMin();
-        t2.this.printcArr();
+        t2.this.printanyArr(carr);
         t2.this.sortStrArr();
+        t2.this.printanyArr(carr);
     }
 }
