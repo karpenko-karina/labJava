@@ -40,11 +40,7 @@ public class t2 {
         for (int i = 0; i < darr.length; i++) {
             for (int j = 0; j < darr[i].length; j++) {
                 num = randomNum(3, 31);
-                darr[i][j] = randomNum(3, 31) % 2 == 0 ? num + 1 : num;
-//                if (num % 2 == 0)
-//                    darr[i][j] = num + 1;
-//                else
-//                    darr[i][j] = num;
+                darr[i][j] = num % 2 == 0 ? num + 1 : num;
             }
         }
     }
