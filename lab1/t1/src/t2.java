@@ -11,8 +11,6 @@ public class t2 {
     private int[][] darr;
     private int min;
     private String[] carr;
-    Random rand = new Random();
-    int iRand;
     StringBuilder strbuilder;
     /* constructor
             @param rows - rows count in array
@@ -32,20 +30,21 @@ public class t2 {
     @return pseudo random number in range [min, nax]
 
      */
-//    public int randomNum(int min, int max) {
-//        return (int) ((Math.random() * (max - min)) + min);
-//    }
+    public int randomNum(int min, int max) {
+        return (int) ((Math.random() * (max - min)) + min);
+    }
 
     //fill 2d array
     public void filldArr() {
         int num;
         for (int i = 0; i < darr.length; i++) {
             for (int j = 0; j < darr[i].length; j++) {
-                num = rand.nextInt(28) + 3;
-                if (num % 2 == 0)
-                    darr[i][j] = num + 1;
-                else
-                    darr[i][j] = num;
+                num = randomNum(3, 31);
+                darr[i][j] = randomNum(3, 31) % 2 == 0 ? num + 1 : num;
+//                if (num % 2 == 0)
+//                    darr[i][j] = num + 1;
+//                else
+//                    darr[i][j] = num;
             }
         }
     }
@@ -53,13 +52,10 @@ public class t2 {
     // calls fillcArr() function and send index and min number
 
     public void findMin() {
-        min = 3;
         for (int i = 0; i < m; i++) {
-            min = darr[i][0];
-            for (int j = 0; j < n; j++) {
-                if (darr[i][j] < min) min = darr[i][j];
-            }
-            System.out.print(min + "\t");
+//            min = darr[i][0];
+            min = Collections.min(Arrays.asList(darr[i][0]));
+            System.out.print("[Min in row #" + i + ": " + min + "]\t");
             fillcArr(i, min);
         }
         System.out.println();
