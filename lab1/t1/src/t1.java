@@ -1,15 +1,17 @@
-/* class created for solving task1
+/**
+ * this class is for solving task using loops
  */
-
 public class t1 {
     private int m;
     private int n;
     private int[][] darr;
     private int[] marr;
     private String[] carr;
-    /* constructor
-        @param rows - rows count in array
-        @param cols - columns count in array
+
+    /**
+     * this is a constructor
+     * @param m - rows count in array
+     * @param n - columns count in array
      */
     public t1 (int m, int n) {
         this.m = m;
@@ -19,11 +21,12 @@ public class t1 {
         marr = new int[m];
         carr = new String[m];
     }
-    /* generate rand numer
-    @param min - minimal number in range
-    @param max - maximum number in range
-    @return pseudo random number in range [min, nax]
 
+    /**
+     * this method is for generating random number
+     * @param min - minimal number in range
+     * @param max - maximum number in range
+     * @return pseudo random number in range [min, nax]
      */
     public int randomNum(int min, int max) {
         return (int) ((Math.random() * (max - min)) + min);
@@ -110,7 +113,6 @@ public class t1 {
         t1.this.fillmArr();
         t1.this.printmAarr();
         t1.this.fillcArr();
-        t1.this.printcArr();
         t1.this.sortStrArr();
         t1.this.printcArr();
     }

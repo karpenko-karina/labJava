@@ -1,11 +1,10 @@
-/*class with entry point
-*
-* */
-
-public class Main {
-/*Entry point
-        @param args command line arguments
+/**
+ * main class
  */
+public class Main {
+    /**
+     * @param args command line arguments
+     */
     public static void main(String[] args) {
         System.out.println("t1:");
         t1 t1 = new t1(5, 3);

@@ -1,6 +1,6 @@
 public class fibNum {
     private static long[] arr = new long[92];
-        private static int last = 2;
+    private static int last = 2;
     static {
         arr[0] = 1;
         arr[1] = 1;

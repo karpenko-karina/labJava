@@ -1,9 +1,7 @@
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.Comparator;
-import java.util.Random;
-
-/* class created for solving task2
+/**
+ * class created for solving task using Arrays methods
  */
 public class t2 {
     private int m;
@@ -12,10 +10,11 @@ public class t2 {
     private int min;
     private String[] carr;
     StringBuilder strbuilder;
-    /* constructor
-            @param rows - rows count in array
-            @param cols - columns count in array
-      */
+    /**
+     * this is a constructor
+     * @param m - rows count in array
+     * @param n - columns count in array
+     */
     public t2 (int m, int n) {
         this.m = m;
         this.n = n;
@@ -24,17 +23,19 @@ public class t2 {
         carr = new String[m];
         strbuilder = new StringBuilder();
     }
-    /* generate rand numer
-    @param min - minimal number in range
-    @param max - maximum number in range
-    @return pseudo random number in range [min, nax]
-
+    /**
+     * this method is for generating random number
+     * @param min - minimal number in range
+     * @param max - maximum number in range
+     * @return pseudo random number in range [min, nax]
      */
     public int randomNum(int min, int max) {
         return (int) ((Math.random() * (max - min)) + min);
     }
 
-    //fill 2d array
+    /**
+     * fill 2d array
+     */
     public void filldArr() {
         int num;
         for (int i = 0; i < darr.length; i++) {
@@ -46,19 +47,21 @@ public class t2 {
     }
     //search for min number in 2d arr,
     // calls fillcArr() function and send index and min number
-
     public void findMin() {
         for (int i = 0; i < m; i++) {
-//            min = darr[i][0];
-            min = Collections.min(Arrays.asList(darr[i][0]));
+            min = darr[i][0];
+            for (int j = 0; j < darr[i].length; j++)
+                if (darr[i][j] < min) min = darr[i][j];
             System.out.print("[Min in row #" + i + ": " + min + "]\t");
             fillcArr(i, min);
         }
-        System.out.println();
+        System.out.println("\n");
     }
-    /* fill char arr with min values
-    @param i - index of element in array
-    @param min - minimum value
+
+    /**
+     * fill char arr with min values
+     * @param i - index of element in array
+     * @param min - minimum value
      */
     public void fillcArr(int i, int min) {
         strbuilder.setLength(0);
@@ -69,9 +72,6 @@ public class t2 {
     //sort str array
     public void sortStrArr() {
         Arrays.sort(carr, Comparator.reverseOrder());
-//        for (String ch : carr) {
-//            System.out.print(ch + "\t");
-//        }
     }
     //print arr
     public <T> void printanyArr(T[] a){
@@ -82,7 +82,6 @@ public class t2 {
         t2.this.filldArr();
         t2.this.printanyArr(darr);
         t2.this.findMin();
-        t2.this.printanyArr(carr);
         t2.this.sortStrArr();
         t2.this.printanyArr(carr);
     }
